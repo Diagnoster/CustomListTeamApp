@@ -199,7 +199,7 @@ public class ItemListFragment extends Fragment {
                 super(binding.getRoot());
                 mIdView = binding.idText;
                 mContentView = binding.content;
-            }
+        }
 
         }
     }
