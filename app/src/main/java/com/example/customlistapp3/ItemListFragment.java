@@ -104,10 +104,10 @@ public class ItemListFragment extends Fragment {
     public static class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final List<PlaceholderContent.PlaceholderItem> mValues;
+        private final List<PlaceholderContent.Team> mValues;
         private final View mItemDetailFragmentContainer;
 
-        SimpleItemRecyclerViewAdapter(List<PlaceholderContent.PlaceholderItem> items,
+        SimpleItemRecyclerViewAdapter(List<PlaceholderContent.Team> items,
                                       View itemDetailFragmentContainer) {
             mValues = items;
             mItemDetailFragmentContainer = itemDetailFragmentContainer;
@@ -125,12 +125,12 @@ public class ItemListFragment extends Fragment {
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mIdView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).content);
+            holder.mContentView.setText(mValues.get(position).teamName);
 
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(itemView -> {
-                PlaceholderContent.PlaceholderItem item =
-                        (PlaceholderContent.PlaceholderItem) itemView.getTag();
+                PlaceholderContent.Team item =
+                        (PlaceholderContent.Team) itemView.getTag();
                 Bundle arguments = new Bundle();
                 arguments.putString(ItemDetailFragment.ARG_ITEM_ID, item.id);
                 if (mItemDetailFragmentContainer != null) {
@@ -147,8 +147,8 @@ public class ItemListFragment extends Fragment {
                  * experience on larger screen devices
                  */
                 holder.itemView.setOnContextClickListener(v -> {
-                    PlaceholderContent.PlaceholderItem item =
-                            (PlaceholderContent.PlaceholderItem) holder.itemView.getTag();
+                    PlaceholderContent.Team item =
+                            (PlaceholderContent.Team) holder.itemView.getTag();
                     Toast.makeText(
                             holder.itemView.getContext(),
                             "Context click of item " + item.id,
@@ -162,7 +162,7 @@ public class ItemListFragment extends Fragment {
                 // identify the id of the content
                 ClipData.Item clipItem = new ClipData.Item(mValues.get(position).id);
                 ClipData dragData = new ClipData(
-                        ((PlaceholderContent.PlaceholderItem) v.getTag()).content,
+                        ((PlaceholderContent.Team) v.getTag()).teamName,
                         new String[]{ClipDescription.MIMETYPE_TEXT_PLAIN},
                         clipItem
                 );

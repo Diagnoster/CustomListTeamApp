@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -32,9 +33,10 @@ public class ItemDetailFragment extends Fragment {
     /**
      * The placeholder content this fragment is presenting.
      */
-    private PlaceholderContent.PlaceholderItem mItem;
+    private PlaceholderContent.Team mItem;
     private CollapsingToolbarLayout mToolbarLayout;
     private TextView mTextView;
+    ImageView img;
 
     private final View.OnDragListener dragListener = (v, event) -> {
         if (event.getAction() == DragEvent.ACTION_DROP) {
@@ -91,7 +93,7 @@ public class ItemDetailFragment extends Fragment {
         if (mItem != null) {
             mTextView.setText(mItem.details);
             if (mToolbarLayout != null) {
-                mToolbarLayout.setTitle(mItem.content);
+                mToolbarLayout.setTitle(mItem.teamName);
             }
         }
     }

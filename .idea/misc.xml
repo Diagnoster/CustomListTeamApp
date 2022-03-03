@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/deletar/CustomListTeamApp/app/src/main/res/layout/activity_item_detail.xml" value="0.3523550724637681" />
+        <entry key="..\:/deletar/CustomListTeamApp/app/src/main/res/layout/fragment_item_detail.xml" value="0.22" />
+        <entry key="..\:/deletar/CustomListTeamApp/app/src/main/res/layout/fragment_item_list.xml" value="0.18072916666666666" />
+        <entry key="..\:/deletar/CustomListTeamApp/app/src/main/res/layout/item_list_content.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
